@@ -1,15 +1,18 @@
 
 package com.mycompany.polimorfismo_con_tablas_de_multiplicar;
 
-abstract class Tabla_Multiplicar {
-    
-    protected int numero;
 
+class Tabla_Multiplicar extends Operaciones  {
+    
     public Tabla_Multiplicar(int numero) {
-        this.numero = numero;
+        super(numero);
     }
 
-    public abstract void mostrar();
-
-    public abstract int sumarResultados();
+    @Override
+    public void realizarOperacion() {
+        System.out.println("Tabla del " + numero + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
+    }
 }
